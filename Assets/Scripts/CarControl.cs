@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class CarControl : MonoBehaviour
 {
+    public static bool isCarMoving;
+
     Animator accelerateAnim;
 
     private Vector3 goLeft;
     private Vector3 goRight;
-    private bool isMoving;
+    
     private Transform carPos;
     private GameObject playerCar;
     
@@ -25,7 +27,7 @@ public class CarControl : MonoBehaviour
         accelerateAnim = this.GetComponent<Animator>();
         goLeft = new Vector3(-.01f, 0, 0);
         goRight = new Vector3(.01f, 0, 0);
-        isMoving = false;
+        isCarMoving = false;
         carPos = this.gameObject.transform;
         playerCar = this.gameObject;
     }
@@ -38,7 +40,7 @@ public class CarControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) || ForwardButton.isForwardButtonDown) {
             accelerateAnim.SetBool("isAccelerate", true);
-            isMoving = true;            
+            isCarMoving = true;            
         }
         // else must be crash state
         //else {
@@ -46,14 +48,14 @@ public class CarControl : MonoBehaviour
         //}
 
         if(carPos.position.x > -3.0f) {
-            if ((Input.GetKey(KeyCode.A) || LeftButton.isLeftButtonDown) && isMoving) {
+            if ((Input.GetKey(KeyCode.A) || LeftButton.isLeftButtonDown) && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = leftSprite;
                 playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
                 gameObject.transform.position += goLeft;
             }
         }
         if(carPos.position.x < 3.0f) {
-            if ((Input.GetKey(KeyCode.D) || RightButton.isRightButtonDown)  && isMoving) {
+            if ((Input.GetKey(KeyCode.D) || RightButton.isRightButtonDown)  && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = rightSprite;
                 playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
                 gameObject.transform.position += goRight;

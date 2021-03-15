@@ -65,9 +65,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackgroundControl.cs" />
     <Compile Include="Assets\Scripts\CarControl.cs" />
+    <Compile Include="Assets\Scripts\CarSpawnerScript.cs" />
+    <Compile Include="Assets\Scripts\EnemySpriteChanger.cs" />
     <Compile Include="Assets\Scripts\ForwardButton.cs" />
     <Compile Include="Assets\Scripts\LeftButton.cs" />
+    <Compile Include="Assets\Scripts\LeftCarControl.cs" />
+    <Compile Include="Assets\Scripts\MidCarControl.cs" />
     <Compile Include="Assets\Scripts\RightButton.cs" />
+    <Compile Include="Assets\Scripts\RightCarControl.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/unity/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
