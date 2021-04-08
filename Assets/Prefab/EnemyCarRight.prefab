@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 6731314742667509080}
   - component: {fileID: 529612762649411771}
   - component: {fileID: 7253029932353532090}
+  - component: {fileID: 2512481936699768348}
+  - component: {fileID: 6418815683645344709}
   m_Layer: 0
   m_Name: EnemyCarRight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +114,50 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ac7bdd99f6a0884c8f688a43e2b5a1b, type: 3}
   - {fileID: 21300000, guid: 44d30f2d8b538fe4dbd2ddd4cb12b3a7, type: 3}
   - {fileID: 21300000, guid: bdbee578a19bd234bba11b9da72de73b, type: 3}
+--- !u!61 &2512481936699768348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334737738234313204}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06283116, y: -0.9581733}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.75, y: 6.44}
+    newSize: {x: 9.75, y: 6.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.739408, y: 2.63872}
+  m_EdgeRadius: 0
+--- !u!50 &6418815683645344709
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334737738234313204}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

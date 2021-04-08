@@ -12,7 +12,7 @@ public class CarSpawnerScript : MonoBehaviour
 
     private int randomLineNumber;
     private float timer;
-    private const float MAX_TIMER = 10f;
+    private const float MAX_TIMER = 20f;
     private const float COUNTDOWN = .1f;
     private GameObject leftCar;
     private GameObject midCar;
@@ -29,7 +29,7 @@ public class CarSpawnerScript : MonoBehaviour
         if (timer <= 0 && CarControl.isCarMoving) {
             randomLineNumber = Random.Range(0, 3);
             currentLine = lines[randomLineNumber];
-            Invoke("ProduceCarAndDestroy", .1f);
+            Invoke("ProduceCarAndDestroy", .2f);
             timer = MAX_TIMER;
         }
 
@@ -40,15 +40,15 @@ public class CarSpawnerScript : MonoBehaviour
         switch (currentLine.name) {
             case "LeftLine":
                 leftCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(leftCar, 4f);
+                Destroy(leftCar, 2.3f);
                 break;
             case "MidLine":
                 midCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(midCar, 4f);
+                Destroy(midCar, 2.3f);
                 break;
             case "RightLine":
                 rightCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(rightCar, 4f);
+                Destroy(rightCar, 2.3f);
                 break;
         }
 

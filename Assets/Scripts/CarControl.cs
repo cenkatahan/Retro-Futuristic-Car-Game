@@ -25,8 +25,8 @@ public class CarControl : MonoBehaviour
     void Start()
     {
         accelerateAnim = this.GetComponent<Animator>();
-        goLeft = new Vector3(-.01f, 0, 0);
-        goRight = new Vector3(.01f, 0, 0);
+        goLeft = new Vector3(-.02f, 0, 0);
+        goRight = new Vector3(.02f, 0, 0);
         isCarMoving = false;
         carPos = this.gameObject.transform;
         playerCar = this.gameObject;
