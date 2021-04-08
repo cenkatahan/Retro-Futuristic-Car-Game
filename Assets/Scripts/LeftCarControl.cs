@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeftCarControl : MonoBehaviour
 {
     private float speed = -2;
-    private const float SCALE_INCREASE_PERSEC = .0004f;
+    private const float SCALE_INCREASE_PERSEC = .0005f;
 
     private void Start() {
         transform.localScale = new Vector3(0, 0, 0);

@@ -50,14 +50,14 @@ public class CarControl : MonoBehaviour
         if(carPos.position.x > -3.0f) {
             if ((Input.GetKey(KeyCode.A) || LeftButton.isLeftButtonDown) && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = leftSprite;
-                playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
+                playerCar.transform.localScale = new Vector3(.2f, .2f, .2f);
                 gameObject.transform.position += goLeft;
             }
         }
         if(carPos.position.x < 3.0f) {
             if ((Input.GetKey(KeyCode.D) || RightButton.isRightButtonDown)  && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = rightSprite;
-                playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
+                playerCar.transform.localScale = new Vector3(.2f, .2f, .2f);
                 gameObject.transform.position += goRight;
             }
         }
