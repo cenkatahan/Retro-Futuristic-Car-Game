@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MidCarControl : MonoBehaviour
 {
-    private float speed = -2;
-    private const float SCALE_INCREASE_PERSEC = .00025f;
+    private float speed = -1.5f;
+    //private const float SCALE_INCREASE_PERSEC = .00025f;
+    private const float SCALE_INCREASE_PERSEC = .0004f;
+
+
 
     private void Start() {
         transform.localScale = new Vector3(0, 0, 0);
@@ -13,6 +16,14 @@ public class MidCarControl : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        //MoveCar();
+
+        transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+        transform.localScale += new Vector3(SCALE_INCREASE_PERSEC, SCALE_INCREASE_PERSEC, SCALE_INCREASE_PERSEC);
+    }
+
+
+    private void MoveCar() {
         transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
         transform.localScale += new Vector3(SCALE_INCREASE_PERSEC, SCALE_INCREASE_PERSEC, SCALE_INCREASE_PERSEC);
     }
