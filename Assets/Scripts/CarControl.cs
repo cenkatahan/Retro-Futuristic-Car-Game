@@ -25,8 +25,8 @@ public class CarControl : MonoBehaviour
     void Start()
     {
         accelerateAnim = this.GetComponent<Animator>();
-        goLeft = new Vector3(-.02f, 0, 0);
-        goRight = new Vector3(.02f, 0, 0);
+        goLeft = new Vector3(-.01f, 0, 0);
+        goRight = new Vector3(.01f, 0, 0);
         isCarMoving = false;
         carPos = this.gameObject.transform;
         playerCar = this.gameObject;
@@ -39,7 +39,6 @@ public class CarControl : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.W) || ForwardButton.isForwardButtonDown) {
-            //StartEngine();
             accelerateAnim.SetBool("isAccelerate", true);
             isCarMoving = true;            
         }
@@ -53,8 +52,6 @@ public class CarControl : MonoBehaviour
                 playerCar.GetComponent<SpriteRenderer>().sprite = leftSprite;
                 playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
                 gameObject.transform.position += goLeft;
-
-                //GoLeft();
             }
         }
         if(carPos.position.x < 3.0f) {
@@ -62,28 +59,11 @@ public class CarControl : MonoBehaviour
                 playerCar.GetComponent<SpriteRenderer>().sprite = rightSprite;
                 playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
                 gameObject.transform.position += goRight;
-
-                //GoRight();
             }
         }
 
         
     }
 
-    private void StartEngine() {
-        accelerateAnim.SetBool("isAccelerate", true);
-        isCarMoving = true;
-    }
 
-    private void GoLeft() {
-        playerCar.GetComponent<SpriteRenderer>().sprite = leftSprite;
-        playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
-        gameObject.transform.position += goLeft;
-    }
-
-    private void GoRight() {
-        playerCar.GetComponent<SpriteRenderer>().sprite = rightSprite;
-        playerCar.transform.localScale = new Vector3(.23f, .23f, .23f);
-        gameObject.transform.position += goRight;
-    }
 }

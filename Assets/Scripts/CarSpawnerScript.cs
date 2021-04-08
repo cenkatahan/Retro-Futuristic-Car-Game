@@ -12,12 +12,16 @@ public class CarSpawnerScript : MonoBehaviour
 
     private int randomLineNumber;
     private float timer;
-    private const float MAX_TIMER = 30f;
+    private const float MAX_TIMER = 10f;
     private const float COUNTDOWN = .1f;
     private GameObject leftCar;
     private GameObject midCar;
     private GameObject rightCar;
 
+    // Start is called before the first frame update
+    void Start() {
+
+    }
 
     // Update is called once per frame
     void Update() {
@@ -25,7 +29,7 @@ public class CarSpawnerScript : MonoBehaviour
         if (timer <= 0 && CarControl.isCarMoving) {
             randomLineNumber = Random.Range(0, 3);
             currentLine = lines[randomLineNumber];
-            Invoke("ProduceCarAndDestroy", 2.5f);
+            Invoke("ProduceCarAndDestroy", .1f);
             timer = MAX_TIMER;
         }
 
@@ -36,27 +40,17 @@ public class CarSpawnerScript : MonoBehaviour
         switch (currentLine.name) {
             case "LeftLine":
                 leftCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(leftCar, 3f);
-                //HandlePrefab(leftCar);
+                Destroy(leftCar, 4f);
                 break;
             case "MidLine":
                 midCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(midCar, 3f);
-                //HandlePrefab(midCar);
+                Destroy(midCar, 4f);
                 break;
             case "RightLine":
                 rightCar = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-                Destroy(rightCar, 3f);
-                //HandlePrefab(rightCar);
+                Destroy(rightCar, 4f);
                 break;
         }
-
-    }
-
-    private void HandlePrefab(GameObject InstantiatedObject) {
-
-        InstantiatedObject = Instantiate(cars[randomLineNumber], currentLine.transform.position, currentLine.transform.rotation);
-        Destroy(InstantiatedObject, 3f);
 
     }
  
