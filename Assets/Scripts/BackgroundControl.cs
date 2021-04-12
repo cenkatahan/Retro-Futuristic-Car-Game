@@ -13,14 +13,18 @@ public class BackgroundControl : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        HandleBackgroundAnim();
+    }
+
+
+    private void HandleBackgroundAnim() {
         if (Input.GetKeyDown(KeyCode.W) || ForwardButton.isForwardButtonDown) {
+
             backgroundAnim.SetBool("isMoving", true);
         }
         //else must be crash state
         //else {
         //    backgroundAnim.SetBool("isMoving", false);
         //}
-
     }
-
 }

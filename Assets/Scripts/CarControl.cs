@@ -11,15 +11,14 @@ public class CarControl : MonoBehaviour
 
     private Vector3 goLeft;
     private Vector3 goRight;
-    
     private Transform carPos;
     private GameObject playerCar;
-    
-
 
     public Sprite leftSprite;
     public Sprite rightSprite;
     public Sprite carSprite;
+
+    private const float MAP_BORDER = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,14 +46,14 @@ public class CarControl : MonoBehaviour
         //    accelerateAnim.SetBool("isAccelerate", false);
         //}
 
-        if(carPos.position.x > -3.0f) {
+        if(carPos.position.x > -MAP_BORDER) {
             if ((Input.GetKey(KeyCode.A) || LeftButton.isLeftButtonDown) && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = leftSprite;
                 playerCar.transform.localScale = new Vector3(.2f, .2f, .2f);
                 gameObject.transform.position += goLeft;
             }
         }
-        if(carPos.position.x < 3.0f) {
+        if(carPos.position.x < MAP_BORDER) {
             if ((Input.GetKey(KeyCode.D) || RightButton.isRightButtonDown)  && isCarMoving) {
                 playerCar.GetComponent<SpriteRenderer>().sprite = rightSprite;
                 playerCar.transform.localScale = new Vector3(.2f, .2f, .2f);

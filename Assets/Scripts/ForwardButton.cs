@@ -14,12 +14,19 @@ public class ForwardButton : MonoBehaviour
     }
 
     public void OnPointerUp() {
-        isForwardButtonDown = false;
-        engineObject.SetActive(false);
+
+        EngineStart();
+        
     }
 
     public void OnPointerDown() {
         isForwardButtonDown = true;
+    }
+
+
+    private void EngineStart() {
+        isForwardButtonDown = false;
+        engineObject.SetActive(false);
     }
 
 }

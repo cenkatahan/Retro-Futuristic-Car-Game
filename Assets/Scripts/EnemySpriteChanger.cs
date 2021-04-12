@@ -9,9 +9,14 @@ public class EnemySpriteChanger : MonoBehaviour
     public Sprite[] cars;
     private int randomSprite;
     private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
+        ChooseRandomSprite();
+    }
+
+    private void ChooseRandomSprite() {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
 
         //choosing a sprite and assaigning it
