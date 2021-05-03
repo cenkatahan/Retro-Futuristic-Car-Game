@@ -67,13 +67,16 @@
     <Compile Include="Assets\Scripts\CarControl.cs" />
     <Compile Include="Assets\Scripts\CarSpawnerScript.cs" />
     <Compile Include="Assets\Scripts\CollisionCheck.cs" />
+    <Compile Include="Assets\Scripts\CreditScript.cs" />
     <Compile Include="Assets\Scripts\EnemySpriteChanger.cs" />
     <Compile Include="Assets\Scripts\ForwardButton.cs" />
+    <Compile Include="Assets\Scripts\GameOverHudManager.cs" />
     <Compile Include="Assets\Scripts\LeftButton.cs" />
     <Compile Include="Assets\Scripts\LeftCarControl.cs" />
     <Compile Include="Assets\Scripts\MidCarControl.cs" />
     <Compile Include="Assets\Scripts\RightButton.cs" />
     <Compile Include="Assets\Scripts\RightCarControl.cs" />
+    <Compile Include="Assets\Scripts\Scene_Manager.cs" />
     <Compile Include="Assets\Scripts\ScoreHandler.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
